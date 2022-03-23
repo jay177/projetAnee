@@ -1,0 +1,87 @@
+* , ::before ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.circle-btn {
+    outline: none;
+    background: none;
+    border: none;
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    z-index: 11;
+    top: 300px;
+}
+ 
+.circle-btn:hover {
+    transform: scale(1.2);
+}
+.circle-btn:active {
+    transform: scale(1.3);
+}
+.circle-btn span {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 250px;
+    will-change: transform;
+
+}
+
+
+
+svg {
+    transform: rotate(-90deg);
+}
+
+.bg-svg {
+    stroke: #b8b8b834;
+    stroke-width: 3;
+
+}
+
+.filled {
+    stroke:#fff;
+    stroke-width: 3;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 0.4s ease-in-out;
+}
+
+.circle-btn:hover .filled {
+    stroke-dashoffset: 0;
+}
+.containerr{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 100vh;
+}
+.containerr .boxx{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+    z-index: 0;
+    filter: grayscale(1);
+    border: 10px solid var(--main-color);
+}
+.containerr .boxx:hover{
+    filter: grayscale(0);
+}

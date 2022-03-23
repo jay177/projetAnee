@@ -1,0 +1,265 @@
+/* css pour les lightbox */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+:root {
+    --main-color:black;
+    --sec-color:white;
+}
+section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background: var(--main-color);
+
+}
+section .box{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: #f00;
+    margin: 10px;
+    overflow: hidden;
+
+}
+/* .box .imgbx img{
+    width: 100%;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+.box .imgbx:hover img{
+    transform: (1.1);
+} */
+section .box .imgbx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0, 0.9);
+    
+}
+section .box .imgbx.active{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+section .box .imgbx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+section .box .imgbx.active img{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    right: 50px;
+    bottom: 50px;
+    width: calc(100% - 100px);
+    height: calc(100% - 100px);
+}
+section .box .imgbx h2{
+    opacity: 0;
+    visibility: hidden;
+
+}
+section .box .imgbx.active h2{
+    opacity: 1;
+    visibility: visible;
+    text-align: center;
+    color: var(--sec-color);
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 15px;
+    letter-spacing: 4px;
+
+}
+section .box .imgbx .content{
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    left: 50px;
+    opacity: 0;
+    visibility: hidden;
+    background: rgb(0, 0, 0, 0.8);
+    padding: 20px;
+    color: var(--sec-color);
+    transform: translateY(100%);
+}
+section .box .imgbx.active .content{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 0.5s;
+}
+section .box .imgbx .content h3{
+    font-size: 24px;
+    font-weight: 600;
+    
+}
+.asburger{
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-image: url("../image/1.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 120%;
+    z-index: 2;
+    overflow-y: hidden;
+    transition: 0.5s;
+
+}
+.list-plongeante{
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+.asburger{
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 12;
+    top: 0;
+    left: 0;
+    background-image: url("../image/1a.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 120%;
+    z-index: 2;
+    overflow-y: hidden;
+    transition: 0.5s;
+
+}
+.list-plongeante{
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+.asburger a{
+    padding: 8px;
+    text-decoration: none;
+    font-size: 30px;
+    color: gray;
+    display: block;
+    transition: 0.3s;
+
+}
+
+
+.asburger a:hover, .asburger a:focus {
+    color: whitesmoke;
+}
+
+.burger{
+    color: #0e4749;
+    left: 10px;
+    top: 20px;
+    font-size: 50px;
+    cursor: pointer;
+    display: block;
+    margin-left: 97%;
+    position: fixed;
+    z-index: 1;
+}
+.asburger .bouton {
+    top: 20%;
+    right: 50px;
+    font-size: 70px;
+    color: #73937e;
+}
+
+@media screen and (max-height:600px) {
+
+    .asburger .bouton {
+        font-size: 40px;
+    }
+    .burger{
+       
+        font-size: 40px;
+        
+        
+    }}
+
+.comm{
+    background-color: var(--sec-color);
+    padding: 15px;
+    margin: 10px;
+    display: inline-flex;
+    grid-template-columns: repeat(auto-fill,200px);
+    font-family: 'News Cycle', sans-serif;
+    color: darkgray;
+    max-width: 300px;
+    position: relative;
+    background: rgba(10, 3, 102, 0.575);  
+}
+.comm a{
+    color: var(--sec-color);
+}
+/* light mode */
+hr {
+    width: 200px;
+}
+h1 {
+    text-align: center;
+    padding-top: 70px;
+
+}
+.contenu {
+    padding: 50px 10%;
+    text-align: justify;
+ 
+
+}
+.btn-toggle {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #333;
+    color: #fff;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    cursor: pointer;
+}
+
+body.light {
+    color: var(--main-color)!important;
+    background:var(--sec-color)!important;
+    /* important pour la domomination de l'élément */
+}
+body.light .btn-toggle {
+    background: var(--main-color);
+    color: var(--sec-color);
+} 
+.dark{
+    background: var(--main-color);
+}

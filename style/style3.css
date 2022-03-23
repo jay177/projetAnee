@@ -1,0 +1,67 @@
+/* css pour le parralax */
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+body {
+    background: black;
+    min-height: 1500px;
+}
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/* voile noir transparent pur un effet noir et blanc */
+section:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, black, transparent);
+    z-index: 1000;
+}
+section:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 1000;
+    mix-blend-mode: color;
+}
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+
+}
+
+#txt{
+    position: relative;
+    color: #fff;
+    font-size: 10em;
+    z-index: 1;
+}
+
+#ro{
+    z-index: 2;
+}
+
+@media screen and (max-width: 1030px){
+    
+}
